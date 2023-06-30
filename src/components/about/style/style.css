@@ -1,0 +1,35 @@
+#about .content {
+    background-color: #4C6C94;
+}
+
+#about h2 {
+    font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 32px;
+}
+
+#about p {
+    font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+
+#about .texts {
+    width: 70%;
+}
+
+@media (max-width: 900px) {
+    #about .container {
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    #about .content {
+        border-radius: 0 !important;
+    }
+
+    #about .texts {
+        width: 100%;
+    }
+}

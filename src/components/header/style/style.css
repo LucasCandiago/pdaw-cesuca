@@ -1,0 +1,20 @@
+.logo {
+  width: 25%;
+}
+
+#header .tittle {
+  font-family: "Poly", serif;
+  font-size: 64px;
+  line-height: 0.7;
+}
+
+#header .subtittle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 32px;
+}
+
+@media (max-width: 900px) {
+  .logo {
+    width: 100%;
+  }
+}
