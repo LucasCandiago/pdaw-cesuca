@@ -2,12 +2,18 @@ import "./style/style.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import img1 from "../../img/products/1.jpeg";
-import img2 from "../../img/products/2.jpeg";
-import img3 from "../../img/products/3.jpeg";
-import img4 from "../../img/products/4.jpeg";
+import { useNavigate } from "react-router-dom";
+import { products } from "../../mocks/products";
 
 function Products() {
+  const navigate = useNavigate();
+
+  function renderProduct(product) {
+    navigate("/vela", { state: { produto: product } });
+  }
+
+  const produtos = products.filter(produto => produto.ativo);
+
   return (
     <section id="products">
       <div className="container text-center">
@@ -37,40 +43,14 @@ function Products() {
               },
             }}
           >
-            <div className="item px-2">
-              <div
-                className="card"
-                style={{ backgroundImage: `url(${img1})` }}
-              ></div>
-            </div>
-
-            <div className="item px-2">
-              <div
-                className="card py-5"
-                style={{ backgroundImage: `url(${img2})` }}
-              ></div>
-            </div>
-
-            <div className="item px-2">
-              <div
-                className="card py-5"
-                style={{ backgroundImage: `url(${img3})` }}
-              ></div>
-            </div>
-
-            <div className="item px-2">
-              <div
-                className="card py-5"
-                style={{ backgroundImage: `url(${img4})` }}
-              ></div>
-            </div>
-
-            <div className="item px-2">
-              <div
-                className="card py-5"
-                style={{ backgroundImage: `url(${img4})` }}
-              ></div>
-            </div>
+            {produtos.map((product) => (
+              <div className="item px-2" onClick={() => renderProduct(product)}>
+                <div
+                  className="card"
+                  style={{ backgroundImage: `url(${product.imagem})` }}
+                ></div>
+              </div>
+            ))}
           </OwlCarousel>
         </div>
       </div>

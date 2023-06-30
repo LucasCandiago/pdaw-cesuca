@@ -1,24 +1,64 @@
 #products .tittle {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 32px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 32px;
 }
 
 #products .content {
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 #products .card {
-    height: 300px;
-    border: 2px solid #7197CF;
-    border-radius: 25px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  height: 300px;
+  border: 2px solid #7197cf;
+  border-radius: 25px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#products .owl-prev,
+#products .owl-next {
+  font-size: 40px;
+  outline: none !important;
+  margin-top: -18%;
+}
+
+#products .owl-prev {
+  float: left;
+  left: -3%;
+  position: absolute;
+}
+
+#products .owl-next {
+  float: right;
+  position: absolute;
+  left: 100%;
+}
+
+#products .owl-prev span,
+#products .owl-next span,
+#products .owl-dots {
+  display: none !important;
 }
 
 @media (max-width: 900px) {
-    #products .card {
-        height: 375px;
-    }
+  #products .card {
+    height: 375px;
+  }
+
+  #products .owl-prev {
+    margin: 50%;
+  }
+
+  #products .owl-next {
+    left: 52%;
+  }
+
+  #products .owl-prev,
+  #products .owl-next {
+    margin-top: 1%;
+    font-size: 25px;
+  }
 }
