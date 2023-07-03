@@ -27,6 +27,10 @@ function Header() {
     });
   });
 
+  const homeLink = () => {
+    window.location.href = ("/");
+  };
+
   return (
     <header id="header">
       <div className="text-center py-5">
@@ -41,7 +45,15 @@ function Header() {
               </div>
               <div class="menu m-auto d-none">
                 <div className="links w-50 m-auto py-3">
-                  <Link to="/" className="menu-item text-uppercase">
+                  <Link
+                    to="externalLink"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    onClick={homeLink}
+                    className="menu-item text-uppercase"
+                  >
                     Home
                   </Link>
                   <Link
